@@ -1,0 +1,32 @@
+# HTTP requests for task management
+POST  http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "Finish the report",
+  "description": "Complete the quarterly financial report",
+  "priority": "High",
+  "status": "Open",
+  "dueDate": "2025-11-01"
+}
+
+
+#### Get all tasks ###
+GET http://localhost:3000/tasks
+
+
+### Get task by query parameter ###
+GET http://localhost:3000/tasks?status=Open&priority=High
+
+
+#### Update Task
+PUT http://localhost:3000/tasks/1
+Content-Type: application/json
+
+{
+  "status": "InProgress",
+  "priority": "Medium"
+}
+
+#### Get task insights
+GET http://localhost:3000/tasks/insights
